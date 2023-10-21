@@ -7,6 +7,7 @@ frontend:
         - npm ci
     build:
       commands: 
+        - npm install
         - npm run build
   artifacts:
     # IMPORTANT - Please verify your build output directory
@@ -14,4 +15,4 @@ frontend:
     files:
       - '**/*'
   cache:
-    paths: []
+    paths:
