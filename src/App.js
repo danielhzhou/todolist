@@ -12,6 +12,7 @@ import {
 } from '@mantine/core';
 import { useState, useRef, useEffect } from 'react';
 import { MoonStars, Sun, Trash } from 'tabler-icons-react';
+import Popup from './Components/PP.js';
 
 import {
 	MantineProvider,
@@ -110,6 +111,9 @@ export default function App() {
 
 	const taskTitle = useRef('');
 	const taskSummary = useRef('');
+
+	const [buttonPopup, setButtonPopup] = useState(false);
+
 
 	function createTask() {
 		setTasks([
@@ -281,7 +285,7 @@ function deleteTask(index) {
 							New Task
 						</Button>
 						<Button
-							onClick={() => resetTasks()}
+							onClick={() => setButtonPopup(true)}
 							variant="outline"
 							color="red"
 							fullWidth
@@ -289,6 +293,7 @@ function deleteTask(index) {
 							>
 							Reset Tasks
 							</Button>
+							<Popup trigger={buttonPopup} setTrigger={setButtonPopup} resetTasks={resetTasks}></Popup>
 					</Container>
 				</div>
 			</MantineProvider>
