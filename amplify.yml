@@ -4,10 +4,10 @@ frontend:
     # IMPORTANT - Please verify your build commands
     preBuild:
       commands:
+        - cd todo_react_app
         - npm ci
     build:
       commands: 
-        - npm install
         - npm run build
   artifacts:
     # IMPORTANT - Please verify your build output directory
