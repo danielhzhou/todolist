@@ -4,7 +4,6 @@ frontend:
     # IMPORTANT - Please verify your build commands
     preBuild:
       commands:
-        - cd todo_react_app
         - npm ci
     build:
       commands: 
